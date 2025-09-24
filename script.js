@@ -1,33 +1,42 @@
-let contador = 0;
+// Seleção dos elementos com querySelector
+const form = document.querySelector("#formCadastro");
+const nome = document.querySelector("#nome");
+const email = document.querySelector("#email");
+const senha = document.querySelector("#senha");
+const nascimento = document.querySelector("#nascimento");
+const termos = document.querySelector("#termos");
+const btnCadastrar = document.querySelector("#btnCadastrar");
+const feedback = document.querySelector("#feedback");
 
-const valorDisplay = document.querySelector('#valor-contador');
-const btnAdicionar = document.querySelector('#btn-adicionar');
-const btnSubtrair = document.querySelector('#btn-subtrair');
+// Evento de clique no botão
+btnCadastrar.onclick = function (event) {
+  event.preventDefault(); // evita envio real do formulário
 
-btnAdicionar.onclick = function() {
-    contador++; // Incrementar na variavel
-    valorDisplay.innerText = contador; //Atualiza o valor em tela
-}
+  let erros = [];
 
-btnSubtrair.onclick = function() {
-    contador--; //decrementa a variavel
-    valorDisplay.innerText = contador; //atualiza o valor em tela 
-}
+  // Validações
+  if (nome.value.trim() === "") {
+    erros.push("• O campo Nome não pode estar vazio.");
+  }
+  if (!email.value.includes("@")) {
+    erros.push("• O e-mail deve conter '@'.");
+  }
+  if (senha.value.length < 8) {
+    erros.push("• A senha deve ter no mínimo 8 caracteres.");
+  }
+  if (nascimento.value === "") {
+    erros.push("• A data de nascimento é obrigatória.");
+  }
+  if (!termos.checked) {
+    erros.push("• É necessário aceitar os termos.");
+  }
 
-const inputNome = document.querySelector('#nome');
-const btnEnviar = document.querySelector('#btn-enviar');
-const feedback = document.querySelector('#feedback-msg');
-
-btnEnviar.onclick = function(event) {
-    event.preventDefault();
-
-    const nomeDigitado = inputNome.value; //value é para pegar o valor do in
-
-    if (nomeDigitado === '') {
-        feedback.innerText = 'Erro! O campo nome não pode estar vazio!';
-        feedback.style.color = 'red'; // Trocando a cor
-    } else {
-    feedback.innerText = 'Formulário enviado com sucesso!'
-    feedback.style.color ='green';
-    }
-}
+  // Exibição da mensagem
+  if (erros.length > 0) {
+    feedback.innerText = erros.join("\n");
+    feedback.style.color = "red";
+  } else {
+    feedback.innerText = "Cadastro realizado com sucesso!";
+    feedback.style.color = "green";
+  }
+};
