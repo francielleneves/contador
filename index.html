@@ -1,54 +1,41 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+<!-- Diz para o navegador que o documento está usando HTML5 -->
+
 <html lang="pt-BR">
+<!-- Abertura da página HTML, com idioma configurado como português do Brasil -->
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador e Formulario de Cadastro</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Cabeçalho da página: informações que não aparecem diretamente na tela -->
+
+    <title>Lista de usuário</title>
+    <!-- Define o título da aba do navegador -->
+
+    <link rel="stylesheet" href="style.css"/> 
+    <!-- Importa o arquivo CSS para estilizar a página -->
 </head>
+
 <body>
-    <h1>Contador</h1>
-    <p>Valor: <span id="valor-contador">0</span></p>
-    <button id="btn-subtrair">-</button>
-    <button id="btn-adicionar">+</button>
+    <!-- Aqui começa o corpo da página: tudo que o usuário vê -->
 
-    <hr>
-    <h1>Formulário de Cadastro</h1>
-    <form id="cadastroForm">
-        <div>
-            <label for="nomeCompleto">Nome Completo:</label>
-            <input type="text" id="nomeCompleto" name="nomeCompleto">
-        </div>
-        <br>
-        <div>
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email">
-        </div>
-        <br>
-        <div>
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha">
-        </div>
-        <br>
-        <div>
-            <label for="dataNascimento">Data de Nascimento:</label>
-            <input type="date" id="dataNascimento" name="dataNascimento">
-        </div>
-        <br>
-        <div>
-            <input type="checkbox" id="termos" name="termos">
-            <label for="termos">Aceito os Termos</label>
-        </div>
-        <br>
-        <button type="submit" id="btnSubmit">Cadastrar</button>
+    <h1>Lista de Usários</h1>
+    <!-- Título principal exibido na tela -->
+
+    <form id="form-usuario">
+        <!-- Formulário com id "form-usuario" (pode ser usado pelo JavaScript) -->
+
+        <input type="text" id="input-nome" placeholder="Digite um nome" />
+        <!-- Campo de texto para digitar o nome do usuário -->
+        <!-- id="input-nome" → serve para o JavaScript pegar esse campo -->
+        <!-- placeholder → mostra um texto de dica dentro da caixinha -->
+
+        <button type="submit">Adicionar usuário</button>
+        <!-- Botão que envia o formulário -->
     </form>
-    <div id="mensagem"></div>
 
-    <hr>
-    <h2>Usuários Cadastrados</h2>
-    <ul id="lista-usuarios"></ul>
-
+    <ul id="lista de usuarios"></ul>
+    <!-- Aqui está o erro: o id tem espaços, o que não é permitido -->
+    <!-- O correto seria: <ul id="lista-de-usuarios"></ul> -->
+    <!-- Essa lista servirá para mostrar os nomes adicionados -->
     <script src="script.js"></script>
 </body>
 </html>
-      

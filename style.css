@@ -1,7 +1,41 @@
-.input-error {
-  border: 2px solid red;
-  background-color: #fdd;
+/* Define o estilo geral da página */
+body {
+    font-family: sans-serif; /* muda o tipo da letra (mais simples e moderna) */
+    margin: 20px; /* coloca um espaço (margem) de 20px em volta de todo o conteúdo */
 }
-.input-success {
-  border: 2px solid green;
+
+/* Estilo do título principal (geralmente o <h1>) */
+h1 {
+    text-align: center; /* centraliza o texto no meio da tela */
+}
+
+/* Estilo do formulário */
+form {
+    display: flex; /* coloca os elementos do formulário (campo e botão) lado a lado */
+    justify-content: center; /* centraliza o formulário no meio da página */
+    margin-bottom: 20px; /* adiciona um espaço abaixo do formulário */
+}
+
+/* Estilo do campo de texto (onde digita o nome) */
+input[type="text"] {
+    padding: 10px; /* coloca espaço dentro do campo, pra não grudar o texto nas bordas */
+    width: 300px; /* define a largura do campo (tamanho fixo) */
+}
+
+/* Estilo do botão */
+button {
+    padding: 8px 15px; /* coloca espaço dentro do botão (vertical 8px, horizontal 15px) */
+    cursor: pointer; /* muda o cursor para uma “mãozinha” quando passa por cima */
+}
+
+/* Estilo da lista que mostra os nomes */
+ul {
+    list-style-type: none; /* tira as bolinhas padrão da lista */
+    padding: 0; /* remove o espaço interno padrão da lista */
+}
+
+/* Estilo de cada item da lista (cada nome) */
+li {
+    padding: 10px; /* espaço interno pra deixar o texto mais “solto” */
+    border-bottom: 1px solid #CCCCCC; /* coloca uma linha cinza embaixo de cada item */
 }
